@@ -3,20 +3,21 @@ import 'package:get/get.dart';
 class CounterController extends GetxController {
   //TODO: Implement CounterController
 
-  final Bilangan = 0.obs;
+  final bilangan = 0.obs;
 
   void increment() {
-    if (Bilangan.value >= 20) {
-      Get.snackbar('Warning', 'Loba Teuing');
+    if (bilangan.value >= 20) {
+      Get.snackbar('warning', 'Ges atuh uy');
     } else {
-      Bilangan.value++;
+      bilangan.value++;
     }
   }
-   void decrement() {
-    if (Bilangan.value <= 0) {
-      Get.snackbar('Warning', 'Hutang');
+
+  void decrement() {
+    if (bilangan.value <= 0) {
+      Get.snackbar('warning', 'Beak boss');
     } else {
-      Bilangan.value--;
+      bilangan.value--;
     }
   }
 }

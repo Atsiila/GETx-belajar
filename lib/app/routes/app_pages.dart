@@ -4,6 +4,8 @@ import '../middlewares/auth_middleware.dart';
 import '../modules/biodata/bindings/biodata_binding.dart';
 import '../modules/biodata/views/biodata_view.dart';
 import '../modules/biodata/views/output_view.dart';
+import '../modules/counter/bindings/counter_binding.dart';
+import '../modules/counter/views/counter_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -18,7 +20,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.BIODATA;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(
@@ -28,8 +30,8 @@ class AppPages {
         middlewares: [AuthMiddleware()]),
     GetPage(
         name: _Paths.COUNTER,
-        page: () => const HomeView(),
-        binding: HomeBinding(),
+        page: () => const CounterView(),
+        binding: CounterBinding(),
         middlewares: [AuthMiddleware()]),
     GetPage(
         name: _Paths.BIODATA,
@@ -37,18 +39,19 @@ class AppPages {
         binding: BiodataBinding(),
         middlewares: [AuthMiddleware()]),
     GetPage(
-        name: _Paths.OUTPUT,
-        page: () => OutputView(),
-        middlewares: [AuthMiddleware()]),
+      name: _Paths.OUTPUT,
+      page: () => OutputView(),
+      // binding: BiodataBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTER,
+      page: () => RegisterView(),
+      binding: RegisterBinding(),
+    ),
     GetPage(
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
-    ),
-    GetPage(
-      name: _Paths.REGISTER,
-      page: () =>  RegisterView(),
-      binding: RegisterBinding(),
     ),
     GetPage(
       name: _Paths.PROFILE,
@@ -57,5 +60,3 @@ class AppPages {
     ),
   ];
 }
-
-//route

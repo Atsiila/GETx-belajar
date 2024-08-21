@@ -21,20 +21,20 @@ class CounterView extends GetView<CounterController> {
               'CounterView is working',
               style: TextStyle(fontSize: 20),
             ),
-            Obx(() => Text('Di Klik : ${c.Bilangan}')),
-            SizedBox(height: 20),
+            Obx(() => Text('Di Klik : ${c.bilangan}')),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              mainAxisSize: MainAxisSize.min,
+              children: [     
                 ElevatedButton(
                   onPressed: () => c.decrement(),
                   child: Icon(Icons.remove),
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 10), 
                 ElevatedButton(
                   onPressed: () => c.increment(),
                   child: Icon(Icons.add),
                 ),
+               
               ],
             ),
           ],
